@@ -11,6 +11,8 @@
 		4445E07A28303966008852FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445E07928303966008852FC /* ContentView.swift */; };
 		4445E07C28303966008852FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4445E07B28303966008852FC /* Assets.xcassets */; };
 		4445E07F28303966008852FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4445E07E28303966008852FC /* Preview Assets.xcassets */; };
+		4445E086283058C2008852FC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4445E085283058C2008852FC /* ViewModel.swift */; };
+		447B4A19284BA12A00568803 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447B4A18284BA12A00568803 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		4445E07928303966008852FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4445E07B28303966008852FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4445E07E28303966008852FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4445E085283058C2008852FC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		447B4A18284BA12A00568803 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		44F724B82839612600D64E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,11 @@
 		4445E07628303966008852FC /* WordIt */ = {
 			isa = PBXGroup;
 			children = (
+				44F724B82839612600D64E72 /* Info.plist */,
 				4445E07728303966008852FC /* WordItApp.swift */,
 				4445E07928303966008852FC /* ContentView.swift */,
+				447B4A18284BA12A00568803 /* SettingsView.swift */,
+				4445E085283058C2008852FC /* ViewModel.swift */,
 				4445E07B28303966008852FC /* Assets.xcassets */,
 				4445E07D28303966008852FC /* Preview Content */,
 			);
@@ -138,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4445E07A28303966008852FC /* ContentView.swift in Sources */,
+				447B4A19284BA12A00568803 /* SettingsView.swift in Sources */,
+				4445E086283058C2008852FC /* ViewModel.swift in Sources */,
 				4445E07828303966008852FC /* WordItApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +280,7 @@
 				DEVELOPMENT_TEAM = 9S3B5R96Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordIt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +310,7 @@
 				DEVELOPMENT_TEAM = 9S3B5R96Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordIt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
