@@ -11,6 +11,7 @@ import AVFoundation
 struct SettingsView: View {
     @State var soundOn = true
     @State var vibrateOn = false
+    @ObservedObject var model: ViewModel
     
     var body: some View {
         ZStack {
@@ -39,12 +40,34 @@ struct SettingsView: View {
                 }
                 .padding(100)
 
-                //BAR BUTTONS
+                //BUTTONS
+                BarButton(text: "Main Menu")
+                    .padding(5)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            model.playingGame = false
+                            model.newGame()
+                        }
+                    }
+                
                 BarButton(text: "Reset")
                     .padding(5)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            model.resetGame()
+                        }
+                    }
                 
                 BarButton(text: "New Game")
                     .padding(5)
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            model.newGame()
+                        }
+                        
+                    }
+                
+                
                 
                 //TOGGLE BUTTONS
                 HStack(spacing: 50) {
@@ -54,7 +77,7 @@ struct SettingsView: View {
                             .bold()
                             .font(.headline)
                 
-                        SquareToggle(val: $soundOn)
+                        SquareToggle(val: $model.soundOn)
                     }
                     
                     VStack(spacing: 5) {
@@ -63,7 +86,7 @@ struct SettingsView: View {
                             .bold()
                             .font(.headline)
                         
-                        SquareToggle(val: $vibrateOn)
+                        SquareToggle(val: $model.vibrateOn)
                     }
                 }
                 .padding(25)
@@ -94,7 +117,7 @@ struct BarButton: View {
 struct SquareToggle: View {
     @Binding var val: Bool
     var offset: CGFloat {
-        if(val){
+        if(!val){
             return -25.0
         } else {
             return 25.0
@@ -115,40 +138,40 @@ struct SquareToggle: View {
             Color(0xADBD8A)
                 .frame(width: 100, height: 50)
                 .cornerRadius(7)
-                .opacity(val ? 0 : 1)
+                .opacity(!val ? 0 : 1)
             
             Color.white
                 .frame(width: 100, height: 50)
                 .cornerRadius(7)
-                .opacity(!val ? 0 : 1)
+                .opacity(val ? 0 : 1)
             
             
             Color(0xADBD8A)
                 .frame(width: 35, height: 35)
                 .cornerRadius(5)
                 .offset(x: offset)
-                .opacity(!val ? 0 : 1)
+                .opacity(val ? 0 : 1)
             
             Color.white
                 .frame(width: 35, height: 35)
                 .cornerRadius(5)
                 .offset(x: offset)
-                .opacity(val ? 0 : 1)
+                .opacity(!val ? 0 : 1)
             
             Image(systemName: "checkmark")
                 .font(Font.system(size: 20, weight: .black))
                 .foregroundColor(.white)
-                .opacity(val ? 0 : 1)
+                .opacity(!val ? 0 : 1)
                 .offset(x: -20)
             
             Image(systemName: "xmark")
                 .font(Font.system(size: 20, weight: .black))
                 .foregroundColor(Color(0xADBD8A))
-                .opacity(!val ? 0 : 1)
+                .opacity(val ? 0 : 1)
                 .offset(x: 20)
         }
         .onTapGesture {
-            simpleSuccess()
+//            simpleSuccess()
             withAnimation(.spring(response: 0.4, dampingFraction: 0.6)) {
                 val.toggle()
             }
@@ -156,8 +179,8 @@ struct SquareToggle: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView(, model: <#ViewModel#>)
+//    }
+//}
